@@ -14,6 +14,7 @@ class smart_array
 	virtual ~smart_array();
 
 	void add_element(int value);
+	int get_size();
 	int get_element(int index);
 };
 

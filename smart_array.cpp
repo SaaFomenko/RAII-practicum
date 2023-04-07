@@ -13,7 +13,20 @@ smart_array::smart_array(int size) :
 
 smart_array& smart_array::operator=(smart_array& op_right)
 {
-	//Need realese.
+	int size = op_right.get_size();
+	if (_size != size)
+	{
+		_size = size;
+		delete[] arr;
+
+		arr = new int[_size];
+	}
+
+	for (int i = 0; i < _size; ++i)
+	{
+		arr[i] = op_right.get_element(i);
+	}
+
 	return *this;
 }
 
@@ -32,6 +45,11 @@ void smart_array::add_element(int value)
 
 	arr[_index] = value;
 	++_index;
+}
+
+int smart_array::get_size()
+{
+	return _size;
 }
 
 int smart_array::get_element(int index)
