@@ -11,6 +11,12 @@ smart_array::smart_array(int size) :
 	arr = new int[_size];
 }
 
+smart_array& smart_array::operator=(smart_array& op_right)
+{
+	//Need realese.
+	return *this;
+}
+
 smart_array::~smart_array()
 {
 	delete[] arr;

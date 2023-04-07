@@ -10,6 +10,7 @@ class smart_array
 
 	public:
 	smart_array(int size);
+	smart_array& operator=(smart_array& op_right);
 	virtual ~smart_array();
 
 	void add_element(int value);
